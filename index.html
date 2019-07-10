@@ -1,0 +1,57 @@
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<link rel="stylesheet" href="css/icon.css">
+		<link rel="stylesheet" href="css/mdl.css">
+		<script defer src="js/material.js"></script>
+		<script src="js/jianhuang.js"></script>
+		<script src="http://filehost.eu5.org/js/links.js"></script>
+	</head>
+	<body>
+		<!-- Always shows a header, even in smaller screens. -->
+		<div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+		  <header class="mdl-layout__header">
+			<div class="mdl-layout__header-row">
+			  <!-- Title -->
+			  <span class="mdl-layout-title">扫黄大队</span>
+			  <!-- Add spacer, to align navigation to the right -->
+			  <div class="mdl-layout-spacer"></div>
+			  <!-- Navigation. We hide it in small screens.-->
+			  <nav class="mdl-navigation mdl-layout--large-screen-only">
+			  </nav>
+			</div>
+		  </header>
+		  <div class="mdl-layout__drawer">
+			<span class="mdl-layout-title">链接</span>
+			<nav class="mdl-navigation" id="nav">
+			</nav>
+		  </div>
+		  <main class="mdl-layout__content">
+			<div class="page-content" style="margin:16px">
+			  <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" style="width:100%">
+				<input class="mdl-textfield__input" type="text" id="url" style="width:100%">
+				<label class="mdl-textfield__label" for="url">图片URL</label>
+			  </div>
+			  <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored mdl-js-ripple-effect" style="width:auto" onclick='mark(document.getElementById("url").value)'>
+			    鉴别
+			  </button>
+			  或者
+			  <button onclick="document.getElementById('upload').click()" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored mdl-js-ripple-effect" style="width:auto" onclick="upload()">
+			    上传
+			  </button><br>
+			  <image style="max-width:100%;height:auto;margin-top:16px;float:left" src id="img"></image>
+			  <input onchange="jianhuang(this.files[0])" style="display:none" id="upload" type="file"></input>
+			</div>
+			  <div class="mdl-card mdl-shadow--2dp" style="float:left;margin-left:16px;">
+				  <div class="mdl-card__title mdl-shadow--2dp" style="background-color:rgb(63,81,181)">
+					<h5 class="mdl-card__title-text" style="color:white;font-size:16px">Response</h5>
+				  </div>
+				  <div class="mdl-card__supporting-text" id="response" style="color:black">
+						
+				  </div>
+			  </div>
+		  </main>
+		</div>
+	</body>
+</html>
